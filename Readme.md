@@ -8,7 +8,7 @@ This should include everything needed to run the MetaDefender Vault software in 
 
 ##### Getting started
 - Clone this repository: `git clone https://github.com/mwheeler1982/metadefender-vault.git C:\your\path`
-- Create a text file containing your OPSWAT MetaDefender Vault activation key, and place it at vault/src/vault_activation.key
+- Create a text file containing your OPSWAT MetaDefender Vault activation key, and place it at `vault/src/vault_activation.key`
 - Optional: modify the [.env](.env) file to specify the version of MetaDefender Vault you wish to run
 - Build and start the container: `docker-compose up -d`
 - Optional: monitor logs with `docker-compose logs -f` 
