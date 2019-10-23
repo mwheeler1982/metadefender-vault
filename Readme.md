@@ -19,3 +19,4 @@ This should include everything needed to run the MetaDefender Vault software in 
 - Right now, several items are hard-coded:
   - Default admin account credentials
   - Admin account's name and email address
+- License is not automatically freed up when container is deleted

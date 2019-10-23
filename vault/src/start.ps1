@@ -17,6 +17,12 @@ Write-Host "Sleep time completed"
 $activation_key = Get-Content -Path C:\OPSWAT\vault_activation.key -TotalCount 1
 & C:\\OPSWAT\\activate_vault.ps1 -hostname localhost -user admin -password admin -activation_key $activation_key -activation_node_quantity 1 -activation_comment "Vault in Docker"
 
+# Tell that we are done with initialization
+Write-Host
+Write-Host "*** Initialization Complete ***"
+Write-Host
+Write-Host "MetaDefender Vault is ready to be used"
+
 # Loop to display logs and keep container running
 $lastCheck = (Get-Date).AddSeconds(-2) 
 while ($true) 
