@@ -1,0 +1,4 @@
+# gitignore
+
+# Ignore the Metadefender Vault Activation Key
+vault_activation.key

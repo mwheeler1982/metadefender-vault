@@ -1,0 +1,23 @@
+version: "2.4"
+
+services:
+  vault:
+    build:
+        context: vault
+        args:
+            vault_installer_file: metadefender-vault_${VERSION}.exe
+    expose:
+        - "8000"
+        - "8010"
+    isolation: process
+    ports:
+        - "8000:8000"
+        - "8010:8010"
+    networks:
+        - "vault_network"
+    mem_limit: 4G
+
+networks:
+  vault_network:
+    driver: nat
+    name: vault_network
