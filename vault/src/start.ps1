@@ -13,9 +13,15 @@ Write-Host "Sleep time completed"
 # See if we need to complete the first-run configuration
 & C:\\OPSWAT\first_run.ps1 -hostname localhost -user admin -password admin -firstname Admin -lastname Admin -email admin@localhost.local
 
-# License the instance
-$activation_key = Get-Content -Path C:\OPSWAT\vault_activation.key -TotalCount 1
-& C:\\OPSWAT\\activate_vault.ps1 -hostname localhost -user admin -password admin -activation_key $activation_key -activation_node_quantity 1 -activation_comment "Vault in Docker"
+# License the instance, but only if the activation key file exists
+Write-Host "Attempting product activation"
+$file_exists = Test-Path C:\OPSWAT\vault_activation.key
+if ($file_exists) {
+    $activation_key = Get-Content -Path C:\OPSWAT\vault_activation.key -TotalCount 1
+    & C:\\OPSWAT\\activate_vault.ps1 -hostname localhost -user admin -password admin -activation_key $activation_key -activation_node_quantity 1 -activation_comment "Vault in Docker"
+} else {
+    Write-Host "Skipping activation because activation key file not found"
+}
 
 # Tell that we are done with initialization
 Write-Host
