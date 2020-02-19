@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/servercore:1903
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
 ARG vault_installer_file
 

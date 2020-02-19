@@ -3,7 +3,7 @@
 ### MetaDefender Vault Dockerized For Windows
 This should include everything needed to run the MetaDefender Vault software in a Windows docker container. This assumes the following:
 - Docker host is configured for WCOW (Windows Containers on Windows). See [Docker on windows documentation](https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers) for more information.
-- Docker host is either Windows 10 or Windows Server 2019, build 1903. You may need to update the [Dockerfile](vault/Dockerfile) to reflect your required version
+- Docker host is either Windows 10 or Windows Server 2019. You may need to update the [Dockerfile](vault/Dockerfile) to reflect your required version
 - You are able to run in containers process isolation mode. You may need to modify the [docker-compose.yml](docker-compose.yml) file to change the isolation mode to hyperv.
 
 ##### Getting started
